@@ -1,0 +1,49 @@
+ResumeAI Pro - Step-by-Step AI Usage Guide
+=============================================
+
+This guide explains how to use the different AI Providers inside your local ResumeAI application.
+
+--------------------------------------------------
+Method 1: Using Ollama (100% Free & Local Privacy)
+--------------------------------------------------
+This method runs the AI completely on your own graphics card/processor. No resume data ever leaves your computer.
+
+1. Download and install the Ollama desktop app from https://ollama.com.
+2. Open your terminal/command prompt and download a model. For example: `ollama run llama3` (this might take a few minutes the first time to download the model).
+3. Keep the Ollama app running in the background.
+4. Launch your ResumeAI app using `run_app.bat`.
+5. In the left sidebar, change the "API Provider" dropdown to "Ollama (Local)".
+6. In the box below it, type the exact name of the model you downloaded (e.g., "llama3" or "mistral").
+7. Upload your PDFs and click "Start Optimization Process".
+
+--------------------------------------------------
+Method 2: Using Groq Llama 3 (Free & Ultra Fast)
+--------------------------------------------------
+This method uses Groq's cloud servers. It is completely free and incredibly fast (often processing in under 5 seconds).
+
+1. Go to https://console.groq.com/keys and create a free account.
+2. Click "Create API Key" and copy the long string of letters and numbers it gives you.
+3. Launch your ResumeAI app using `run_app.bat`.
+4. In the left sidebar, select "Groq (Llama 3)" from the dropdown menu.
+5. Paste your API Key into the password box.
+6. Upload your PDFs and click "Start Optimization Process".
+
+--------------------------------------------------
+Method 3: Using Gemini Pro (Free Google AI)
+--------------------------------------------------
+This method uses Google's powerful Gemini 1.5 Pro model. It has a generous free tier perfect for personal use.
+
+1. Go to Google AI Studio at https://aistudio.google.com/app/apikey.
+2. Sign in with your Google account and click the blue "Create API key" button.
+3. Copy the generated API key.
+4. Launch your ResumeAI app using `run_app.bat`.
+5. In the left sidebar, select "Gemini (Google)" from the dropdown menu.
+6. Paste your API Key into the password box.
+7. Upload your PDFs and click "Start Optimization Process".
+
+--------------------------------------------------
+General Usage Tips for Best Results:
+--------------------------------------------------
+- Master Documents: Ensure your Master Resume and Cover Letter PDFs are clean (text-selectable, not scanned images).
+- Target Language: If you select "German (Deutsch)", the AI will automatically translate your entire resume while optimizing it for the job description!
+- Always review the final PDF text, as AI models sometimes hallucinate slight details.

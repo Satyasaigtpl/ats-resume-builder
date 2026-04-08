@@ -1,0 +1,420 @@
+\documentclass[10pt, a4paper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1.5 cm,
+    bottom=1.5 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Narayana Gattupalli Eswar - CV},
+    pdfauthor={Narayana Gattupalli Eswar},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[absolute]{textpos}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+% Settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\circ$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.08 cm,
+        parsep=0.08 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.2 cm + 0.00001 cm}{0.2 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+% ============================================================
+\begin{document}
+
+
+
+% ----- HEADER -----
+\noindent
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+    % Left: all text centered in the X column
+    \begin{minipage}[c]{\linewidth}
+        \centering
+        \textbf{\fontsize{22pt}{22pt}\selectfont Narayana Gattupalli Eswar}\\[0.3cm]
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Rudolf-Breitscheid Str. 1, 99423 Weimar, Germany}%
+        \hspace{0.4cm}%
+        \mbox{\hrefWithoutArrow{tel:+4917647141669}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}017647141669}}\\[0.12cm]
+        \mbox{\hrefWithoutArrow{mailto:gattupallieswarnarayana@yahoo.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}gattupallieswarnarayana@yahoo.com}}%
+        \hspace{0.4cm}%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/satyasaigattupalli/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}satyasaigattupalli}}\\[0.12cm]
+        %\mbox{{\color{black}\footnotesize\faCalendar*}\hspace*{0.13cm}15.05.1999}%
+        \hspace{0.4cm}%
+       % \mbox{{\color{black}\footnotesize\faGlobe}\hspace*{0.13cm}Indian}
+    \end{minipage}
+    &
+    % Right: photo
+    \begin{minipage}[c]{3cm}
+        \centering
+        \begin{tikzpicture}
+            \draw[lightgray, line width=0.5pt] (0,0) rectangle (2.8cm,2.8cm);
+            \node[inner sep=0pt] at (1.4cm,1.4cm) {\includegraphics[width=2.8cm, height=2.8cm]{profile.jpg}};
+        \end{tikzpicture}
+    \end{minipage}
+\end{tabularx}
+
+\vspace{0.2cm}
+\hrule
+\vspace{0.1cm}
+
+% ----- EXPERIENCE -----
+\section{Experience}
+
+\begin{twocolentry}{\textit{Weimar, Germany}\\\textit{04/2025 -- 01/2026}}
+    \textbf{Master Thesis: Material-based Segmentation in Texture Space}
+
+    \textit{Bauhaus-Universität Weimar}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Implemented and compared multiple image segmentation approaches, including color-based methods in both image space and texture space for 3D reconstructed models
+        \item Created and evaluated a dataset of reconstructed scenes using 3reCapsl to assess segmentation performance for material estimation
+        \item Developed segmentation pipelines integrating color, geometric features (e.g., curvature), and illumination variations to improve material separation accuracy
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{twocolentry}{\textit{Weimar, Germany}\\\textit{05/2023 -- Present}}
+    \textbf{Student Assistant: Participation Manager}
+
+    \textit{Bauhaus Summer School}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Coordinated participant management for international programs, supporting 1,500+ students across 6 semesters by overseeing applications, maintaining databases, and ensuring clear, timely communication with diverse stakeholders
+        \item Supported project planning and execution by organizing and coordinating course activities, preparing communications, and coordinating and aligning 20+ tutors per semester to ensure smooth program
+        \item Acted as a central coordination point between academic, administrative, and marketing teams, improving information flow, identifying process gaps, and contributing to more efficient project operations
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{twocolentry}{\textit{Weimar, Germany}\\\textit{07/2025 -- 03/2026}}
+    \textbf{Student Assistant}
+
+    \textit{Bauhaus-Universität Weimar}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed and operated Python-based automation workflows (DeepL API) to support digital projects; structured project tasks, tracked milestones, identified risks early, and provided transparent reporting to technical and administrative stakeholders.
+        \item Tracked project milestones and reported progress across internal 
+digitalisation projects, identifying risks early and implementing 
+solutions.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+
+\begin{twocolentry}{\textit{Hyderabad, India}\\\textit{09/2020 -- 03/2022}}
+    \textbf{Project Engineer}
+
+    \textit{Wipro Technologies Limited}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+    \item Coordinated engineering tasks, project timelines, and deliverables across cross-functional teams in agile environments
+    \item Maintained structured project documentation in SmartPlant Foundation (EDMS) and supported alignment of requirements, schedules, and deliverables
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{twocolentry}{\textit{Andhra Pradesh, India}\\\textit{10/2017 -- 10/2020}}
+    \textbf{Founder}
+
+    \textit{Print My Dreams}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Built a custom gifting venture achieving 20× ROI while managing vendor negotiations, international sourcing, and end-to-end fulfilment
+        \item Achieved 80\% customer retention and kept marketing spend at 5--8\% of revenue through early adoption of influencer marketing
+    \end{highlights}
+\end{onecolentry}
+
+% ----- EDUCATION -----
+\section{Education}
+
+\begin{twocolentry}{\textit{Weimar, Germany}\\\textit{04/2022 -- Expected 2026}}
+    \textbf{Bauhaus-Universität Weimar}
+
+    \textit{M.Sc. Digital Engineering, Specialisation: Computer Vision}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{Coursework:} Image Analysis \& Object Recognition, Photogrammetric CV, Machine Learning, Software Engineering, Optimisation, GIS.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{twocolentry}{\textit{Vaddeswaram, India}\\\textit{06/2016 -- 05/2020}}
+    \textbf{Koneru Lakshmaiah Education Foundation}
+
+    \textit{B.Tech Mechanical Engineering, Specialisation: Automobile Engineering}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item \textbf{Coursework:} Engineering Design, Thermodynamics, Fluid Mechanics, Manufacturing, Automotive Engineering.
+    \end{highlights}
+\end{onecolentry}
+
+% ----- KEY PROJECTS -----
+\section{Key Projects}
+
+\begin{twocolentry}{\textit{04/2024 -- 11/2024}}
+    \textbf{Material-based Segmentation}
+
+   % \textit{Python $\cdot$ PyTorch $\cdot$ Blender $\cdot$ DeepLabv3+ $\cdot$ U-Net $\cdot$ OpenCV}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Generated a synthetic dataset of 20{,}000 images across four material classes in Blender, then used it to benchmark classical methods (K-Means, Watershed, Mean-Shift) against deep learning models(Deeplabv3+ ,U-Net) with transfer learning and data augmentation. The aim was to understand where classical methods still hold their strengths and where they don't.
+    \end{highlights}
+\end{onecolentry}
+
+% ----- TECHNICAL SKILLS -----
+\section{Technical Skills}
+
+\begin{onecolentry}
+    \textbf{Computer Vision \& ML:} PyTorch, OpenCV, NumPy, Scikit-learn, Fuzzy-C Means, DeepLabv3+, U-Net
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \textbf{3D \& Photogrammetry:} Agisoft Metashape, Blender, Trimesh, 3D RealityCapture (130-cam DSLM rig)
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \textbf{Programming:} Python, Java, MATLAB, SQL
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \textbf{PM \& Coordination Tools:} Trello, Git, TYPO3, MS Office, AnyLogic, SmartPlant Foundation (EDMS), Power BI, Jira
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \textbf{CAD \& Engineering:} SolidWorks, AutoCAD
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \textbf{Methodologies:} Agile / Scrum, Process Analysis, Stakeholder Management, Workshop Facilitation
+\end{onecolentry}
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \textbf{AI Tools:} ChatGPT, Claude, Perplexity, NotebookLM
+\end{onecolentry}
+
+% ----- LANGUAGES -----
+\section{Languages}
+
+\begin{onecolentry}
+    \textbf{German:} B2 \quad \textbf{English:} C2  \quad \textbf{Hindi:} C2 \quad \textbf{Telugu:} Native
+\end{onecolentry}
+
+% ----- PUBLICATIONS -----
+\section{Publications \& Patents}
+
+\begin{samepage}
+    \begin{twocolentry}{April 2020}
+        \textbf{Design of Agricultural Robot for Fruit Picking and Tuning}
+
+        \textit{International Journal of Innovative Technology and Exploring Engineering}
+        \vspace{0.10 cm}
+    \end{twocolentry}
+
+    \vspace{0.05 cm}
+    \begin{onecolentry}
+        \href{https://www.ijitee.org/download/volume-9-issue-6/}{Volume-9 Issue-6, April 2020, Page No. 1791-1798.}
+    \end{onecolentry}
+\end{samepage}
+
+\vspace{0.15cm}
+
+\begin{samepage}
+    \begin{twocolentry}{May 2019}
+        \textbf{Modeling and Analysis of Flat Spiral Spring Based Speed Breaker Device for Generation of Electricity}
+
+        \textit{International Journal of Recent Technology and Engineering}
+        \vspace{0.10 cm}
+    \end{twocolentry}
+
+    \vspace{0.05 cm}
+    \begin{onecolentry}
+        \href{https://www.ijrte.org/download/volume-8-issue-1/}{Volume-8 Issue-1, May 2019, Page No. 555-561.}
+    \end{onecolentry}
+\end{samepage}
+
+\vspace{0.15cm}
+
+\begin{samepage}
+    \begin{twocolentry}{May 2019}
+        \textbf{Robot for foundary operation}
+
+        \textit{Design Patent -  Indian Government}
+        \vspace{0.10 cm}
+    \end{twocolentry}
+\end{samepage}
+
+
+\vspace{0.15cm}
+
+\begin{samepage}
+    \begin{twocolentry}{April 2019}
+        \textbf{Life Resuce and Fire Extinguishing Robot}
+
+        \textit{Design Patent -  Indian Government}
+        \vspace{0.10 cm}
+    \end{twocolentry}
+\end{samepage}
+
+% ----- VOLUNTEERING -----
+\section{Volunteering \& Leadership}
+
+\begin{twocolentry}{07/2025 -- Present}
+    \textbf{Student Council, Bauhaus-Universität Weimar}
+
+    \textit{Treasurer}
+\end{twocolentry}
+
+\begin{twocolentry}{07/2024 -- 07/2025}
+    \textbf{Student Council of Media, Bauhaus-Universität Weimar}
+
+    \textit{Chairman \& Treasurer}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{twocolentry}{06/2024 -- Present}
+    \textbf{Student Council Bauhaus4EU}
+
+    \textit{Executive Board Member - Treasurer}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{twocolentry}{02/2025 -- 05/2025}
+    \textbf{European Student Assembly 2025}
+
+    \textit{Panel Coordinator}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{twocolentry}{10/2024 -- 10/2025}
+    \textbf{Bauhaus-Universität Weimar}
+
+    \textit{Welcome Tutor}
+\end{twocolentry}
+
+\vspace{0.10 cm}
+
+\begin{twocolentry}{09/2022 -- 05/2024}
+    \textbf{Bauhaus Internationals}
+
+    \textit{Consultant}
+\end{twocolentry}
+
+\vspace{0.5cm}
+\noindent{\small\color{gray} Weimar, \today}\\
+%\noindent\rule{50mm}{0.4pt}\\
+{\small\itshape\color{gray} Narayana Gattupalli Eswar}
+
+\end{document}
