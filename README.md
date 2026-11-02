@@ -193,7 +193,7 @@ pip install -r requirements.txt
 
 **PDF compilation fails**
 - Open MiKTeX Console → check for updates → make sure "Install packages on the fly" is enabled
-- Check that the MiKTeX `bin\x64` path in `latex_utils.py` matches your actual installation path
+- Make sure `xelatex` or `pdflatex` is available on your system `PATH`; set `LATEX_ENGINE` to an explicit executable path if needed
 - Look at the error text shown in the app — XeLaTeX logs are included
 
 **AI returns garbled LaTeX**
